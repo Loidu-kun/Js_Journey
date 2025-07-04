@@ -17,7 +17,7 @@ document.getElementById("p1").textContent = `The total students in this class is
 document.getElementById("p2").textContent = `The total students of ${students} can be divided into ${extraStudents} groups`;
 
 
-// Augmented Assignement Operators
+// Augmented Assignement Operators commonly for reassigning the value of a variable
 
 let Students = 31;
 
