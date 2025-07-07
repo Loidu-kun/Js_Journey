@@ -1,0 +1,25 @@
+#count{
+    display: block;
+    text-align: center;
+    font-size: 4em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#buttons{
+    text-align: center;
+
+}
+
+.button{
+    padding: 15px, 25px;
+    font-size: large;
+    background-color: rgba(24, 240, 240, 0.842);
+    border-radius: 5px;
+    outline-color: aqua;
+    cursor: pointer;
+    transition: background-color after 0.25s;
+}
+
+.button:hover{
+    background-color:rgb(98, 19, 163);
+}
