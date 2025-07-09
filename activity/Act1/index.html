@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <Label>First Number:</Label>
-    <input id="fNum"> <br><br>
-    <Label>Second Number:</Label>
-    <input id="sNum">
-    <br>
-    <button id="addBtn">add</button>
-    <button id="subBtn">minus</button>
-    <button id="mulBtn">multiply</button>
-    <button id="divBtn">Divide</button>
-    <br>
+    <label for="fNum">First Number:</label>
+    <input type="number" id="fNum">
+
+    <label for="sNum">Second Number:</label>
+    <input type="number" id="sNum">
+
+    <div>
+        <button id="addBtn">Add</button>
+        <button id="subBtn">Subtract</button>
+        <button id="mulBtn">Multiply</button>
+        <button id="divBtn">Divide</button>
+    </div>
+
     <button id="answer">Equals</button>
+
     <hr>
-    <Label>Output:</Label>
-    <p id="p1"></p>
+
+    <label>Output:</label>
+    <p id="p1">Result will appear here.</p>
+
     <script src="index.js"></script>
 </body>
 </html>

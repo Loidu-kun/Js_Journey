@@ -1,25 +1,68 @@
-#count{
-    display: block;
-    text-align: center;
-    font-size: 4em;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-#buttons{
+.container {
+    background-color: white;
+    padding: 40px;
     text-align: center;
-
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.button{
-    padding: 15px, 25px;
-    font-size: large;
-    background-color: rgba(24, 240, 240, 0.842);
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#count {
+    font-size: 3rem;
+    margin: 20px 0;
+    color: #333;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
     border-radius: 5px;
-    outline-color: aqua;
     cursor: pointer;
-    transition: background-color after 0.25s;
+    transition: background-color 0.3s ease;
 }
 
-.button:hover{
-    background-color:rgb(98, 19, 163);
+#increase {
+    background-color: #28a745;
+    color: white;
+}
+#increase:hover {
+    background-color: #218838;
+}
+
+#decrease {
+    background-color: #dc3545;
+    color: white;
+}
+#decrease:hover {
+    background-color: #c82333;
+}
+
+#reset {
+    background-color: #6c757d;
+    color: white;
+}
+#reset:hover {
+    background-color: #5a6268;
 }

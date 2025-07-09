@@ -26,6 +26,6 @@ button.onclick = function(){
     randNum2 = Math.floor(Math.random() * max) + min;
     randNum3 = Math.floor(Math.random() * max) + min;
     number1.textContent = randNum1;
-    number2.textContent = "," + randNum2 + ",";
+    number2.textContent = randNum2;
     number3.textContent = randNum3;
 }
