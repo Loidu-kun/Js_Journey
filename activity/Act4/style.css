@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.instruction {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+input#myAnswer {
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input#myAnswer:focus {
+    border-color: #007bff;
+}
+button#myBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button#myBtn:hover {
+    background-color: #0056b3;
+}
+
+.feedback {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
