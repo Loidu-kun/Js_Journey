@@ -1,5 +1,6 @@
 /*
-    Switch = can be a efficient replacement to many else if statements
+    Switch = can be a efficient replacement to many else if statements.
+             mostly used for multiple condition statement.
 */
 
 let day = "meow";
