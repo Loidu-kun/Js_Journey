@@ -2,39 +2,38 @@ const min = 1;
 const max = 10;
 const answer = Math.floor(Math.random() * (max - min + 1)) + min;
 
-console.log(answer);
+let attempts = 0;
+const submitBtn = document.getElementById('submitBtn');
+const guessInput = document.getElementById('guessInput');
+const message = document.getElementById('message');
+const attemptsDisplay = document.getElementById('attempts');
 
-let attemp = 0;
-let guess;
-let run = true;
+submitBtn.addEventListener('click', () => {
+  let guess = Number(guessInput.value);
 
-while(run){
-
-    guess = window.prompt(`Guess a number between ${min} - ${max}`);
-    guess = Number(guess);
-    console.log(typeof guess, guess);
-    
-    if(isNaN(guess)){
-        window.alert("Please enter a number");
+  if (isNaN(guess)) {
+    message.textContent = "❌ Please enter a valid number.";
+    message.style.color = "red";
+  } else if (guess < min || guess > max) {
+    message.textContent = `❗ Your guess must be between ${min} and ${max}.`;
+    message.style.color = "orange";
+  } else {
+    attempts++;
+    if (guess < answer) {
+      message.textContent = "📉 Too low!";
+      message.style.color = "blue";
+    } else if (guess > answer) {
+      message.textContent = "📈 Too high!";
+      message.style.color = "blue";
+    } else {
+      message.textContent = `🎉 Correct! The number was ${answer}. Attempts: ${attempts}`;
+      message.style.color = "green";
+      guessInput.disabled = true;
+      submitBtn.disabled = true;
     }
-    else if(guess < min || guess > max){
-        window.alert("out of scope answer");
-    }
-    else{
-        attemp++;
-        if(guess < answer){
-            window.alert("Your guess is to low");
-        }
-        else if(guess > answer){
-            window.alert("Answer is Too high");
+    attemptsDisplay.textContent = `Attempts: ${attempts}`;
+  }
 
-        }
-        else{
-            window.alert(`Nice One The answer was ${answer} It took you ${attemp} attempts`);
-             run == false;
-        }
-    }
-
-   
-
-}
+  guessInput.value = "";
+  guessInput.focus();
+});
