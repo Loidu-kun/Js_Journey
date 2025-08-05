@@ -25,7 +25,7 @@ function2();
 
 //Global Variable
 
-let y = 3;
+let y = 3; // Global variable 
 
 function function3(){
     console.log(y);
