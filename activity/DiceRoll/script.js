@@ -20,5 +20,5 @@ function rollDice() {
 
         diceResult.textContent = `🎯 You rolled: ${values.join(", ")}`;
         diceImages.innerHTML = imagesHTML;
-    }, 500);
+    }, 1000);
 }
