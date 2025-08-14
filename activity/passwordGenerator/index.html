@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+
+        <div class="output-container">
+            <input type="password" id="output" placeholder="Click Generate to create a password">
+            <button id="togglePassword" class="eye-btn" title="Show/Hide Password">&#128065;</button>
+        </div>
+
+        <div class="strength-meter">
+            <div id="strengthFill"></div>
+        </div>
+        <p id="strengthText">Strength: N/A</p>
+
+        <label>
+            Length:
+            <input type="number" id="length" min="1" max="50" value="12">
+        </label>
+
+        <label><input type="checkbox" id="lower" checked> Include lowercase</label>
+        <label><input type="checkbox" id="upper" checked> Include uppercase</label>
+        <label><input type="checkbox" id="numbers" checked> Include numbers</label>
+        <label><input type="checkbox" id="symbols" checked> Include symbols</label>
+
+        <div class="btn-group">
+            <button id="generateBtn">Generate</button>
+            <button id="copyBtn">Copy</button>
+        </div>
+    </div>
+</body>
+</html>
