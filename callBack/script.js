@@ -42,8 +42,6 @@ function display(result){
 sum(display, 1, 2);
 
 
-
-
 function pageDisplay(result){
     document.getElementById("myH1").textContent = result;
 }

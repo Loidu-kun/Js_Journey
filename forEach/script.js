@@ -80,6 +80,7 @@ let pet = ["dog", "cat", "bird"];
 
 pet.forEach(sentence);
 pet.forEach(reveal);
+pet.forEach(paste);
 
 function sentence(element, index, array){
         array[index] = element.charAt(0).toUpperCase() + element.slice(1);
@@ -87,4 +88,8 @@ function sentence(element, index, array){
 
 function reveal(element){
     console.log(element);
+}
+
+function paste(element){
+     document.getElementById("output").innerHTML += element + "<br>";
 }
