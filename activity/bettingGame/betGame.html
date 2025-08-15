@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>🎲 Dice Betting Game</title>
+    <link rel="stylesheet" href="styleBetGame.css" />
+</head>
+<body onload="checkLogin()">
+
+    <div id="logoutBar">
+        <span>👤 <span id="userDisplay"></span></span>
+        <button onclick="logout()" id="logoutBTN">Logout</button>
+    </div>
+
+    <div id="startPanel" class="modal">
+        <div class="modal-content">
+            <h2>Enter Starting Balance</h2>
+            <p>💰 Must be more than 10 coins</p>
+            <input type="number" id="startBalance" min="11" placeholder="e.g. 100">
+            <button id="startGame">Start Game</button>
+        </div>
+    </div>
+
+    <div id="warningPopup"></div>
+
+    <div id="container" style="display: none;">  
+        <h1>🎲 Dice Betting Game</h1>
+
+        <div id="scoreboard">
+            💰 Balance: <span id="balance">0</span> coins |
+            🏆 Wins: <span id="winCount">0</span> |
+            💀 Losses: <span id="lossCount">0</span>
+        </div>
+
+        <h2>Pick up to 3 Numbers</h2>
+        <div id="guessButtons">
+            <button class="guess-btn" data-number="1">1</button>
+            <button class="guess-btn" data-number="2">2</button>
+            <button class="guess-btn" data-number="3">3</button>
+            <button class="guess-btn" data-number="4">4</button>
+            <button class="guess-btn" data-number="5">5</button>
+            <button class="guess-btn" data-number="6">6</button>
+        </div>
+
+        <div id="guessContainer"></div>
+
+        <button id="rollButton">🎯 Roll Dice</button>
+
+        <div id="diceImages"></div>
+        <div id="diceResult"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="scriptBetGame.js"></script>
+</body>
+</html>
