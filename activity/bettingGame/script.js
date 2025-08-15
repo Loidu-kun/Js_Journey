@@ -1,56 +1,54 @@
-// Open/Close Password Generator
-function openGenerator() {
-    document.getElementById("passwordModal").style.display = "block";
-}
-function closeGenerator() {
-    document.getElementById("passwordModal").style.display = "none";
-}
+// Register function
+function register() {
+    let username = document.getElementById("regUsername").value.trim();
+    let password = document.getElementById("regPassword").value.trim();
+    let message = document.getElementById("regMessage");
 
-// Password Generator Logic
-function generatePassword() {
-    const length = document.getElementById("passLength").value;
-    const lowercase = document.getElementById("lowercase").checked ? "abcdefghijklmnopqrstuvwxyz" : "";
-    const uppercase = document.getElementById("uppercase").checked ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "";
-    const numbers = document.getElementById("numbers").checked ? "0123456789" : "";
-    const symbols = document.getElementById("symbols").checked ? "!@#$%^&*()_+[]{}|;:,.<>?" : "";
-
-    let chars = lowercase + uppercase + numbers + symbols;
-    if (!chars) {
-        alert("Select at least one option");
+    if (username === "" || password === "") {
+        message.textContent = "Please fill in all fields.";
+        message.style.color = "red";
         return;
     }
 
-    let password = "";
-    for (let i = 0; i < length; i++) {
-        password += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
 
-    document.getElementById("generatedPassword").value = password;
+    message.textContent = "Registration successful!";
+    message.style.color = "green";
 }
 
-function useGeneratedPassword() {
-    const generated = document.getElementById("generatedPassword").value;
-    if (generated) {
-        document.getElementById("regPassword").value = generated;
-        closeGenerator();
-    }
-}
+// Login function
+function login() {
+    let username = document.getElementById("loginUsername").value.trim();
+    let password = document.getElementById("loginPassword").value.trim();
+    let message = document.getElementById("loginMessage");
 
-// Hide/Show Password
-function togglePassword() {
-    const passInput = document.getElementById("regPassword");
-    passInput.type = passInput.type === "password" ? "text" : "password";
-}
+    let storedUsername = localStorage.getItem("username");
+    let storedPassword = localStorage.getItem("password");
 
-// Register Function
-function register() {
-    const username = document.getElementById("regUsername").value.trim();
-    const password = document.getElementById("regPassword").value.trim();
-
-    if (username && password) {
-        localStorage.setItem(username.toUpperCase(), password);
-        document.getElementById("regMessage").textContent = "Registration successful!";
+    if (username === storedUsername && password === storedPassword) {
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("currentUser", username);
+        window.location.href = "betGame.html";
     } else {
-        document.getElementById("regMessage").textContent = "Please fill out all fields.";
+        message.textContent = "Invalid username or password.";
+        message.style.color = "red";
     }
+}
+
+// Check login for game page
+function checkLogin() {
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn !== "true") {
+        window.location.href = "index.html";
+    } else {
+        document.getElementById("userDisplay").textContent = localStorage.getItem("currentUser");
+    }
+}
+
+// Logout
+function logout() {
+    localStorage.setItem("isLoggedIn", "false");
+    localStorage.removeItem("currentUser");
+    window.location.href = "index.html";
 }
