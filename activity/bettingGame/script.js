@@ -42,7 +42,8 @@ function checkLogin() {
     if (isLoggedIn !== "true") {
         window.location.href = "index.html";
     } else {
-        document.getElementById("userDisplay").textContent = localStorage.getItem("currentUser");
+        let userName = localStorage.getItem("currentUser") || "";
+        document.getElementById("userDisplay").textContent = userName.charAt(0).toUpperCase() + userName.slice(1);
     }
 }
 
