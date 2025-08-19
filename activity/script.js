@@ -13,7 +13,6 @@ function square(element){
     return Math.pow(element, 2)
 }
 
-
 const students = ["Cat", "Dog", "Duck", "Bird"];
 const uppper = students.map(upperCase);
 console.log(uppper);
